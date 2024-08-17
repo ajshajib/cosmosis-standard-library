@@ -11,6 +11,7 @@ from cosmosis.datablock import names
 import os
 import numpy as np
 import pandas as pd
+import gzip
 
 # Default is to use DES-SN5YR
 # default_data_file = os.path.join(os.path.split(__file__)[0], "DESONLY/hubble_diagram.txt")
@@ -53,7 +54,8 @@ class DESY5SNLikelihood(GaussianLikelihood):
         """
         filename = self.options.get_string("data_file", default=default_data_file)
         print("Loading DES Y5 SN data from {}".format(filename))
-        data = pd.read_csv(filename, delim_whitespace=True, comment="#")
+
+        data = pd.read_csv(filename)
         self.origlen = len(data)
         # The only columns that we actually need here are the redshift,
         # distance modulus and distance modulus error
@@ -83,18 +85,17 @@ class DESY5SNLikelihood(GaussianLikelihood):
         # This data file is just the systematic component of the covariance -
         # we also need to add in the statistical error on the magnitudes
         # that we loaded earlier
-        f = open(filename)
-        line = f.readline()
-        n = int(line)
-        C = np.zeros((n, n))
-        for i in range(n):
-            for j in range(n):
-                C[i, j] = float(f.readline())
+        with gzip.open(filename, "rt") as f:
+            line = f.readline()
+            n = int(line)
+            C = np.zeros((n, n))
+            for i in range(n):
+                for j in range(n):
+                    C[i, j] = float(f.readline())
 
-        # Now add in the statistical error to the diagonal
-        for i in range(n):
-            C[i, i] += self.mu_obs_err[i] ** 2
-        f.close()
+            # Now add in the statistical error to the diagonal
+            for i in range(n):
+                C[i, i] += self.mu_obs_err[i] ** 2
 
         # Return the covariance; the parent class knows to invert this
         # later to get the precision matrix that we need for the likelihood.
