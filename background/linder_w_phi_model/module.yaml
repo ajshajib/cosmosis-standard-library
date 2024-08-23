@@ -1,0 +1,50 @@
+#This is a template for module description files
+name: "linder_w_phi_model"
+version: "1.0"
+purpose: "Implement thawing DE model from Frieman & Shajib (in prep.)"
+url: ""
+interface: "linder_w_phi_model.py"
+attribution: [Anowar Shajib]
+rules:
+    ""
+cite:
+    - "Putter & Linder (2008)"
+
+assumptions:
+    - "w(a) = w_0 - 1.58 (1 + w_0) (1-a)"
+
+explanation: |
+    "This w(z) model implements an approximation for the thawing dark energy models."
+
+# List of parameters that can go in the params.ini file in the section for this module    
+params:
+    zmax:
+        meaning: "Maximum redshift to tabulate w(z) to"
+        type: real
+        default: 3.0
+    nz:
+        meaning: "Number of redshifts to tabulate w(z) at"
+        type: int
+        default: 301
+
+#Inputs for a given choice of a parameter, from the values.ini or from other modules
+#If no such choices, just do one of these omitting mode=something part:
+inputs:
+    cosmological_parameters:
+        w0:
+            meaning: "w0 dark energy equation of state parameter today"
+            type: real
+            default:
+
+
+outputs:
+    de_equation_of_state:
+        a:
+            meaning: "Scale factor at tabulated points"
+            type: real 1d
+        z:
+            meaning: "Redshift at tabulated points"
+            type: real 1d
+        w:
+            meaning: "Equation of state at tabulated points"
+            type: real 1d
