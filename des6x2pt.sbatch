@@ -23,4 +23,4 @@ which cosmosis
 export OMP_NUM_THREADS=2
 export OMP_PROC_BIND=true
 export OMP_PLACES=threads
-mpirun -n 56 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/des-y3-6x2.ini
+mpirun -n 56 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/des-y3-maglim.ini
