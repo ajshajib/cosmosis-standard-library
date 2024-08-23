@@ -20,4 +20,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 28 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/desi_planck.ini
+mpirun -n 28 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/desi_planck_lodha24.ini
