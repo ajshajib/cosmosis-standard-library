@@ -6,8 +6,8 @@
 #SBATCH --partition=broadwl
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=56
-#SBATCH --cpus-per-task=2
+#SBATCH --ntasks=112
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2000
 #SBATCH --exclusive                                                          
 #SBATCH --mail-user=ajshajib@uchicago.edu                                   
@@ -20,7 +20,5 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-export OMP_NUM_THREADS=2
-export OMP_PROC_BIND=true
-export OMP_PLACES=threads
-mpirun -n 56 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/des-y3-maglim.ini
+export OMP_NUM_THREADS=1
+mpirun -n 112 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/des-y3-maglim.ini
