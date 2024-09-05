@@ -6,8 +6,7 @@
 #SBATCH --partition=broadwl
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=28
+#SBATCH --ntasks=112
 #SBATCH --mem-per-cpu=2000
 #SBATCH --exclusive                                                          
 #SBATCH --mail-user=ajshajib@uchicago.edu                                   
@@ -20,4 +19,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 28 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/desi_planck_lodha24.ini
+mpirun -n 112 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/desi_planck_lodha24.ini
