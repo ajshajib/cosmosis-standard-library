@@ -3,7 +3,7 @@
 #SBATCH --job-name="cosmosis"
 #SBATCH --output=/home/ajshajib/Logs"/joblog.%j"
 #SBATCH --error=/home/ajshajib/Logs"/error.%j"
-#SBATCH --partition=broadwl
+#SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
 #SBATCH --ntasks-per-node=112
@@ -20,4 +20,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 112 cosmosis --mpi /home/ajshajib/scratch-midway2/cosmosis-standard-library/inis/des_sn5yr.ini
+mpirun -n 112 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/des_sn5yr.ini
