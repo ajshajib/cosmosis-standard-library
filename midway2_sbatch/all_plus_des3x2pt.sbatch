@@ -21,4 +21,4 @@ which conda
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 280 cosmosis --mpi /home/ajshajib/scratch-midway2/cosmosis-standard-library/inis/all_plus_des-y3-maglim.ini
+mpirun -n 280 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/all_plus_des-y3-maglim.ini

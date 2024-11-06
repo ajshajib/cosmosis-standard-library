@@ -21,4 +21,4 @@ which conda
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 112 cosmosis --mpi /home/ajshajib/scratch-midway2/cosmosis-standard-library/inis_lcdm/desi.ini
+mpirun -n 112 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis_lcdm/desi.ini

@@ -20,4 +20,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 112 cosmosis --mpi /home/ajshajib/scratch-midway2/cosmosis-standard-library/inis/des_sn5yr.ini
+mpirun -n 112 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/des_sn5yr.ini
