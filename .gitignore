@@ -26,3 +26,4 @@ likelihood/planck2015/plc-2.0/share/
 shear/cosebis/modules/besselzero04.h
 cosmosis_output/*
 output_old/*
+output*/*
