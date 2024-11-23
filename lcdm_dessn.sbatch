@@ -6,7 +6,7 @@
 #SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=112
+#SBATCH --ntasks=96
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2000
 #SBATCH --exclusive                                                          
@@ -20,4 +20,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 112 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis_lcdm/des_sn5yr.ini
+mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis_lcdm/des_sn5yr.ini
