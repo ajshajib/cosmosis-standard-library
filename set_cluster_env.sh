@@ -14,16 +14,16 @@
 # - COSMOSIS_ALT_COMPILERS=1
 
 module load gsl/2.7
-export GSL_INC=$GSL_DIR/include
-export GSL_LIB=$GSL_DIR/lib
+export GSL_INC=${GSL_DIR}/include
+export GSL_LIB=${GSL_DIR}/lib
 
 module load cfitsio/3.490
-export CFITSIO_INC=$CFITSIO_DIR/include
-export CFITSIO_LIB=$CFITSIO_DIR/lib
+export CFITSIO_INC=${CFITSIO_DIR}/include
+export CFITSIO_LIB=${CFITSIO_DIR}/lib
 
 module load fftw3/3.3.9
-export FFTW_LIBRARY=$FFTW3_DIR/lib
-export FFTW_INCLUDE_DIR=$FFTW3_DIR/include
+export FFTW_LIBRARY=${FFTW3_DIR}/lib
+export FFTW_INCLUDE_DIR=${FFTW3_DIR}/include
 
 module load lapack/3.10.0
 export LAPACK_LINK="-llapack -lblas"
