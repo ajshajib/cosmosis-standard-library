@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # - GSL_INC the path to GSL header files
 # - GSL_LIB the path to GSL library files
 # - CFITSIO_INC the path to CFTSIO header files
