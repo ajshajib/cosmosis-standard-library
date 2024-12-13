@@ -6,7 +6,7 @@
 #SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=96
+#SBATCH --ntasks=48
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2000
 #SBATCH --exclusive                                                          
@@ -21,4 +21,4 @@ which conda
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 96 cosmosis --mpi --segfaults /scratch/midway3/ajshajib/cosmosis-standard-library/inis_lcdm/desi_planck.ini
+mpirun -n 48 cosmosis --mpi --segfaults /scratch/midway3/ajshajib/cosmosis-standard-library/inis_lcdm/desi_planck.ini
