@@ -20,4 +20,4 @@ source cosmosis-configure
 which conda
 which cosmosis
 
-mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/sn_srd.ini
+mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
