@@ -1,0 +1,79 @@
+#This is a template for module description files
+name: "desi_extended"
+version: "whitepaper"
+purpose: "DESI-extended BAO likelihood from forecast"
+url: "https://www.desi.lbl.gov/"
+interface: "desi1_extended.py"
+attribution: [DESI Team (data), CosmoSIS Team (module)]
+rules:
+    "None"
+cite:
+    - ""
+
+assumptions:
+    - "DESI-extended reconstruction and measurements of BAO data"
+    - "Gaussian likelihood"
+    
+explanation: |
+    The DESI extended BAO likelihood module provides a likelihood for the DESI extended
+    forecasted BAO data.
+
+# List of parameters that can go in the params.ini file in the section for this module    
+params:
+    desi_data_sets:
+        meaning: "Choice of which DESI-extended data set(s) to include. Comma-separated string of choices from:"
+        type:
+        default: str
+
+#Inputs for a given choice of a parameter, from the values.ini or from other modules
+#If no such choices, just do one of these omitting mode=something part:
+inputs:
+    distances:
+        rs_zdrag:
+            meaning: Sound horizon at drag epoch of last scattering
+            type: real
+            default:
+        z:
+            meaning: Sample points in redshift of distance theory prediction
+            type: real 1d
+            default:
+        d_v:
+            meaning: Angular average of comoving angular diameter and line of sight distance in Mpc
+            type: real 1d
+            default:
+        d_m:
+            meaning: Co-moving distance in Mpc
+            type: real 1d
+            default:
+        h:
+            meaning: Hubble parameter as function of distance in units of Mpc
+            type: real 1d
+            default:
+
+outputs:
+    likelihoods:
+        desi_extended_bao_like:
+            meaning: Gaussian likelihood value.
+            type: real
+    data_vector:
+        desi_extended_bao_data:
+            meaning: The full vector of data points used in the likelihood
+            type: real 1d
+        desi_extended_bao_theory:
+            meaning: The full vector of theory points used in the likelihood
+            type: real 1d
+        desi_extended_bao_covariance:
+            meaning: The covariance matrix used
+            type: real 2d
+        desi_extended_bao_inverse_covariance:
+            meaning: The inverse covariance matrix (precision matrix) used.
+            type: real 2d
+        desi_extended_bao_simulation:
+            meaning: A simulated data set from the given theory and covariance matrix.
+            type: real 1d
+        desi_extended_bao_chi2:
+            meaning: Chi-squared value for the data and theory
+            type: real
+        desi_extended_bao_n:
+            meaning: Number of data points used
+            type: int
