@@ -17,7 +17,6 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-which conda
 which cosmosis
 
 mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/des_sn5yr.ini

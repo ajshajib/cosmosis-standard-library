@@ -17,7 +17,6 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-which conda
 which cosmosis
 
 export OMP_NUM_THREADS=1

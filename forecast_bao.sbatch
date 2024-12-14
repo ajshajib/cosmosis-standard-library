@@ -17,7 +17,6 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-which conda
 which cosmosis
 
 mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/desi_ext.ini

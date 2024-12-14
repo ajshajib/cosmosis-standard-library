@@ -17,7 +17,6 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-which conda
 which cosmosis
 
 mpirun -n 48 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
