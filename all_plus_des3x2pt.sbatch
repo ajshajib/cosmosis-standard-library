@@ -6,9 +6,9 @@
 #SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=240
+#SBATCH --ntasks=96
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=2000
+#SBATCH --mem=0
 #SBATCH --exclusive                                                          
 #SBATCH --mail-user=ajshajib@uchicago.edu                                   
 #SBATCH --mail-type=ALL    
@@ -20,4 +20,4 @@ source cosmosis-configure
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 240 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/all_plus_des-y3-maglim.ini
+mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/all.ini
