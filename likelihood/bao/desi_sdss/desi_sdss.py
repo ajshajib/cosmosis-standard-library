@@ -87,7 +87,7 @@ DESI_DATA_SETS = {
     },
 }
 
-class DESILikelihood(GaussianLikelihood):
+class SDSSAndDESILikelihood(GaussianLikelihood):
     """
     The 2024 DESI likelihoods from https://arxiv.org/pdf/2404.03002
 
@@ -205,4 +205,4 @@ class DESILikelihood(GaussianLikelihood):
             y[self.dh_index] = f(z_data)
         return y
 
-setup, execute, cleanup = DESILikelihood.build_module()
+setup, execute, cleanup = SDSSAndDESILikelihood.build_module()
