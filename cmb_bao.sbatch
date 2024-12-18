@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name="cosmosis"
+#SBATCH --job-name="cmbao"
 #SBATCH --output=/home/ajshajib/Logs"/joblog.%j"
 #SBATCH --error=/home/ajshajib/Logs"/error.%j"
 #SBATCH --partition=caslake
