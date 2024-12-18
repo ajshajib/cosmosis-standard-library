@@ -8,8 +8,8 @@
 #SBATCH -t 36:00:00      
 #SBATCH --ntasks=192
 #SBATCH --cpus-per-task=1                                                      
-#SBATCH --mail-user=ajshajib@uchicago.edu                                   
-#SBATCH --mail-type=ALL    
+#SBATCH --mail-user=ajshajib@gmail.com                                   
+#SBATCH --mail-type=FAIL   
 
 source /home/ajshajib/.bashrc
 conda activate cosmosis
