@@ -19,4 +19,4 @@ source cosmosis-configure
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 4 cosmosis --mpi --segfaults --mem 3 /scratch/midway3/ajshajib/cosmosis-standard-library/inis/all.ini
+mpirun -n 4 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/all.ini
