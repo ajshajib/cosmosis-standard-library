@@ -7,7 +7,8 @@
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
 #SBATCH --ntasks=192
-#SBATCH --cpus-per-task=1                                                      
+#SBATCH --cpus-per-task=1
+#SBATCH --exclusive                                                      
 #SBATCH --mail-user=ajshajib@uchicago.edu                                   
 #SBATCH --mail-type=ALL    
 
