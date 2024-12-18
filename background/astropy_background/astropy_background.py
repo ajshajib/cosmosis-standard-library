@@ -90,7 +90,7 @@ def execute(block, config):
 
 	# comoving radial
 	D_C = model.comoving_distance(z).to_value(astropy.units.Mpc)
-	Ok0 = 0 # model._Ok0
+	Ok0 = model.Ok0
 
 	# comoving transverse
 	if Ok0 == 0:
