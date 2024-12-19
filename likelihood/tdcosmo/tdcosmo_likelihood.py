@@ -72,8 +72,8 @@ class TDCOSMOlenses:
         om = block['cosmological_parameters', 'omega_m']
         ok = block['cosmological_parameters', 'omega_k']
         ob = block['cosmological_parameters', 'omega_b']
-        w0 = block['cosmological_parameters', 'w']
-        wa = block['cosmological_parameters', 'wa']
+        # w0 = block['cosmological_parameters', 'w0']
+        # wa = block['cosmological_parameters', 'wa']
         mnu = block['cosmological_parameters', 'mnu']
         nnu = block['cosmological_parameters', 'nnu']
 
