@@ -13,10 +13,7 @@ import numpy as np
 import scipy.integrate
 import astropy.units as u
 import astropy.constants as const
-try:
-    from scipy.integrate import simpson
-except ImportError:
-    from scipy.integrate import simps as simpson
+from scipy.integrate import simpson
 
 sigcrit_inv_fac = (4 * np.pi * const.G)/(const.c**2)
 sigcrit_inv_fac_Mpc_Msun = (sigcrit_inv_fac.to(u.Mpc/u.M_sun)).value
