@@ -1,17 +1,17 @@
-sbatch all.sbatch
-sbatch cmb_bao.sbatch
-sbatch cmb.sbatch
-sbatch bao.sbatch
-sbatch dessn.sbatch
+sbatch all.sh
+sbatch cmb_bao.sh
+sbatch cmb.sh
+sbatch bao.sh
+sbatch dessn.sh
 
-sbatch lcdm_all.sbatch
-sbatch lcdm_cmb_bao.sbatch
-sbatch lcdm_cmb.sbatch
-sbatch lcdm_bao.sbatch
-sbatch lcdm_dessn.sbatch
+sbatch lcdm_all.sh
+sbatch lcdm_cmb_bao.sh
+sbatch lcdm_cmb.sh
+sbatch lcdm_bao.sh
+sbatch lcdm_dessn.sh
 
-sbatch all_lim.sbatch
-sbatch cmb_bao_lim.sbatch
-sbatch cmb_lim.sbatch
-sbatch bao_lim.sbatch
-sbatch dessn_lim.sbatch
+sbatch all_lim.sh
+sbatch cmb_bao_lim.sh
+sbatch cmb_lim.sh
+sbatch bao_lim.sh
+sbatch dessn_lim.sh
