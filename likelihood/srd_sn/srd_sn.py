@@ -26,7 +26,7 @@ class SRDSNLikelihood(GaussianLikelihood):
     x_name = "z"
     y_section = names.distances
     y_name = "mu"
-    like_name = "pantheon"
+    like_name = "srdsn"
 
 
     def build_data(self):
