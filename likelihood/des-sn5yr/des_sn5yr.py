@@ -71,7 +71,7 @@ class DESY5SNLikelihood(GaussianLikelihood):
         # Return this to the parent class, which will use it
         # when working out the likelihood
         print(
-            f"Found {len(self.zCMB)} DES SN 5 supernovae (or bins if you used the binned data file)"
+            f"Found {len(self.zCMB)} DES-SN5YR supernovae (or bins if you used the binned data file)"
         )
         return self.zCMB, self.mu_obs
 

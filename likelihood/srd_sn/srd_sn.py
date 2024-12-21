@@ -112,25 +112,43 @@ class SRDSNLikelihood(GaussianLikelihood):
         """
         import scipy.interpolate
 
-        # Pull out theory DA and z from the block.
-        theory_x = block[self.x_section, self.x_name]
-        theory_y = block[self.y_section, self.y_name]
-        theory_ynew = self.zCMB * np.nan
+        # # Pull out theory DA and z from the block.
+        # theory_x = block[self.x_section, self.x_name]
+        # theory_y = block[self.y_section, self.y_name]
+        # theory_ynew = self.zCMB * np.nan
 
-        # Interpolation function of theory so we can evaluate at redshifts of the data
+        # # Interpolation function of theory so we can evaluate at redshifts of the data
+        # f = scipy.interpolate.interp1d(theory_x, theory_y, kind=self.kind)
+
+        # zcmb = self.zCMB
+        # zhel = self.zHEL
+
+        # # distance modulus
+        # theory_ynew = (
+        #     5.0 * np.log10((1.0 + zcmb) * (1.0 + zhel) * np.atleast_1d(f(zcmb))) + 25.0
+        # )
+
+        # # This offset M will be marginalized in the modified log likelihood computation
+        # M = block[names.supernova_params, "M"]
+        # return theory_ynew + M
+
+        # Pull out mu and z from the block.
+        # self.x_section etc. are defined above - we make them variables
+        # so that the user can override them in the ini file.
+        # We have to cut off the first element z=0, because mu is not finite
+        # there and this confuses the interpolator.
+        theory_x = block[self.x_section, self.x_name][1:]
+        theory_y = block[self.y_section, self.y_name][1:]
+
+        # This makes an interpolation function
         f = scipy.interpolate.interp1d(theory_x, theory_y, kind=self.kind)
 
-        zcmb = self.zCMB
-        zhel = self.zHEL
+        # Actually do the interpolation at the data redshifts
+        theory = np.atleast_1d(f(self.data_x))
 
-        # distance modulus
-        theory_ynew = (
-            5.0 * np.log10((1.0 + zcmb) * (1.0 + zhel) * np.atleast_1d(f(zcmb))) + 25.0
-        )
-
-        # This offset M will be marginalized in the modified log likelihood computation
+        # Add the absolute supernova magnitude and return
         M = block[names.supernova_params, "M"]
-        return theory_ynew + M
+        return theory + M
 
     def do_likelihood(self, block):
         # get data x by interpolation
