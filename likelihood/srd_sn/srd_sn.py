@@ -113,7 +113,7 @@ class SRDSNLikelihood(GaussianLikelihood):
         theory = np.atleast_1d(f(self.data_x))
 
         # Add the absolute supernova magnitude and return
-        M = block[names.supernova_params, "M"]
+        M = block[names.supernova_params, "m"]
         return theory + M
 
 
