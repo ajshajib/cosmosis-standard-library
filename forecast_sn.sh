@@ -6,10 +6,8 @@
 #SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=48
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=2000
-#SBATCH --exclusive                                                          
+#SBATCH --ntasks=96
+#SBATCH --cpus-per-task=1                                                          
 #SBATCH --mail-user=ajshajib@gmail.com                                   
 #SBATCH --mail-type=FAIL   
 
@@ -19,4 +17,4 @@ source cosmosis-configure
 
 which cosmosis
 
-mpirun -n 48 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
+mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
