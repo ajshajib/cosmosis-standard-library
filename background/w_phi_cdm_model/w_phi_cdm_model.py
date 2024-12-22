@@ -17,10 +17,15 @@ def setup(options):
     # analysis - they are fixed over the course of a chain.
     zmax = options.get_double(option_section, "zmax", 3.0)
     nz = options.get_int(option_section, "nz", 301)
-
-    # anything we return here will be saved and be sent
-    # to the execute function below as the second argument.
     z = np.linspace(zmin, zmax, nz)[::-1]
+
+    zmax_logz = options.get_double(option_section, "zmax_logz", 1200)
+    n_logz = options.get_int(option_section, "n_logz", 0)
+
+    if n_logz > 0:    
+        z_ext = np.geomspace(zmax, zmax_logz, num = n_logz)
+        z = np.append(z, z_ext[1:])
+
     a = 1 / (1 + z)
 
     return {"z": z, "a": a}
