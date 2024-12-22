@@ -17,4 +17,5 @@ source cosmosis-configure
 
 which cosmosis
 
+export OMP_NUM_THREADS=1
 mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
