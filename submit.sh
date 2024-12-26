@@ -13,6 +13,8 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-which cosmosis
+export JOB_NAME=${RUN_NAME}${MOD_NAME}
 
-mpirun -n ${NUM_PROC} cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/${JOB_NAME}.ini
+export OMP_NUM_THREADS=1
+
+mpirun -n ${NUM_PROC} cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/${RUN_NAME}.ini
