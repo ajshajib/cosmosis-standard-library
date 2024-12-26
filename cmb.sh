@@ -18,4 +18,4 @@ source cosmosis-configure
 which cosmosis
 
 export OMP_NUM_THREADS=1
-mpirun -n 384 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/planck.ini
+mpirun -n 384 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/cmb.ini
