@@ -20,7 +20,7 @@ run_specs = [
 
 for r, n in run_specs:
     for m in modifiers:
-        command = f"sbatch --export=NUM_PROC={n},JOB_NAME={r}{m} submit.sh"
+        command = f"sbatch --job-name={r}{m} --ntasks={n} --export=NUM_PROC={n},JOB_NAME={r}{m} submit.sh"
         print(command)
         os.system(command)
         time.sleep(1)
