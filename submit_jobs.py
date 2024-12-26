@@ -1,7 +1,7 @@
 import os
 import time
 
-modifiers = [""]  # , "_lim", "_lcdm"]
+modifiers = ["_lim", "_lcdm"]  # ""
 
 # runs = ["wl", "sn", "sl", "bao", "bao_cmb", "cmb", "sl_bao", "all"]
 
@@ -9,7 +9,7 @@ modifiers = [""]  # , "_lim", "_lcdm"]
 
 run_specs = [
     # ["all", 8],
-    # ["wl", 8],
+    ["wl", 8],
     # ["bao_cmb", 8],
     ["cmb", 8],
     # ["sl", 4],
@@ -18,9 +18,9 @@ run_specs = [
     # ["bao", 2],
 ]
 
-for run, n in run_specs:
-    n_core = n * 48
-    for mod in modifiers:
+for mod in modifiers:
+    for run, n in run_specs:
+        n_core = n * 48
         command = f"sbatch --job-name={run}{mod} --ntasks={n_core} --export=NUM_PROC={n_core},JOB_NAME={run}{mod} submit.sh"
         print(command)
         os.system(command)
