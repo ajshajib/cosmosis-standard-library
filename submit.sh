@@ -13,7 +13,7 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-export JOB_NAME=${RUN_NAME}${MOD_NAME}
+export JOB_NAME="${RUN_NAME}${MOD_NAME}"
 
 export OMP_NUM_THREADS=1
 

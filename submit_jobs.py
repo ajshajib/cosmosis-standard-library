@@ -21,7 +21,7 @@ run_specs = [
 for mod in modifiers:
     for run, n in run_specs:
         n_core = n * 48
-        command = f"sbatch --job-name={run}{mod} --ntasks={n_core} --export=NUM_PROC={n_core},MOD_NAME={run},RUN_NAME={run} submit.sh"
+        command = f"sbatch --job-name={run}{mod} --ntasks={n_core} --export=NUM_PROC={n_core},MOD_NAME={mod},RUN_NAME={run} submit.sh"
         print(command)
         os.system(command)
         time.sleep(1)
