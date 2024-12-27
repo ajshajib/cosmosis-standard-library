@@ -21,4 +21,5 @@ for mod in "${modifiers[@]}"; do
         else
             echo "File inis/${RUN_NAME}.ini does not exist."
         fi
+    done
 done
