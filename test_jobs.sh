@@ -16,10 +16,15 @@ declare -A run_specs=(
 for mod in "${modifiers[@]}"; do
     for run in "${!run_specs[@]}"; do
         export RUN_NAME="${run}${mod}"
+        echo "##################################################"
+        echo "Running ${RUN_NAME}"
+        echo "##################################################"
         if [ -f "inis/${run}.ini" ]; then
             cosmosis "inis/${run}.ini"
         else
+            echo "##################################################"
             echo "File inis/${run}.ini does not exist."
+            echo "##################################################"
         fi
     done
 done
