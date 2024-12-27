@@ -15,15 +15,15 @@ declare -A run_specs=(
 # Loop through each modifier and run specification to execute cosmosis with the corresponding ini file
 for mod in "${modifiers[@]}"; do
     for run in "${!run_specs[@]}"; do
-        export RUN_NAME="${run}${mod}"
+        export JOB_NAME="${run}${mod}"
         echo "##################################################"
-        echo "Running ${RUN_NAME}"
+        echo "Running ${JOB_NAME}"
         echo "##################################################"
         if [ -f "inis/${run}.ini" ]; then
             cosmosis "inis/${run}.ini"
         else
             echo "##################################################"
-            echo "File inis/${run}.ini does not exist."
+            echo "File inis/${run}.ini does not exist for ${JOB_NAME}."
             echo "##################################################"
         fi
     done
