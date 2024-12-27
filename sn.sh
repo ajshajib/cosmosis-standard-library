@@ -15,4 +15,4 @@ source /home/ajshajib/.bashrc
 conda activate cosmosis
 source cosmosis-configure
 
-mpirun -n 48 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/sn.ini
+mpirun -n 48 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/sn.ini
