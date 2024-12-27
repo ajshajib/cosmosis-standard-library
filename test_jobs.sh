@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Array of modifiers to append to the run names
+modifiers=("" "_lim" "_lcdm")
+# Associative array to specify which runs to execute
+declare -A run_specs=(
+    ["wl"]=1
+    ["bao_cmb"]=1
+    ["cmb"]=1
+    ["sl"]=1
+    ["sn_bao"]=1
+    ["sn"]=1
+    ["bao"]=1
+)
+# Loop through each modifier and run specification to execute cosmosis with the corresponding ini file
+for mod in "${modifiers[@]}"; do
+    for run in "${!run_specs[@]}"; do
+        export RUN_NAME="${run}${mod}"
+        if [ -f "inis/${RUN_NAME}.ini" ]; then
+            cosmosis "inis/${RUN_NAME}.ini"
+        else
+            echo "File inis/${RUN_NAME}.ini does not exist."
+        fi
+done
