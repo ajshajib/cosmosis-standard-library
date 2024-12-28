@@ -1,7 +1,7 @@
 import os
 import time
 
-modifiers = ["lim"]  # "_lim", "_lcdm"]  # ""
+modifiers = ["_lim"]  # "_lim", "_lcdm"]  # ""
 
 # runs = ["wl", "sn", "sl", "bao", "bao_cmb", "cmb", "sl_bao", "all"]
 
