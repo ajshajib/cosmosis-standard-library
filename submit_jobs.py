@@ -1,7 +1,7 @@
 import os
 import time
 
-modifiers = [""]  # "_lim", "_lcdm"]  # ""
+modifiers = ["lim"]  # "_lim", "_lcdm"]  # ""
 
 # runs = ["wl", "sn", "sl", "bao", "bao_cmb", "cmb", "sl_bao", "all"]
 
@@ -9,9 +9,9 @@ modifiers = [""]  # "_lim", "_lcdm"]  # ""
 
 run_specs = [
     # ["all", 8],
-    # ["wl", 8],
+    ["wl", 8],
     # ["bao_cmb", 8],
-    ["cmb", 8],
+    # ["cmb", 8],
     # ["sl", 4],
     # ["sn_bao", 2],
     # ["sn", 2],
