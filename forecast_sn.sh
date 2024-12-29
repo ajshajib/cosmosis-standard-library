@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name="srd_sn"
+#SBATCH --job-name="sn_forecast"
 #SBATCH --output=/home/ajshajib/Logs"/joblog.%j"
 #SBATCH --error=/home/ajshajib/Logs"/error.%j"
 #SBATCH --partition=caslake
@@ -16,4 +16,4 @@ conda activate cosmosis
 source cosmosis-configure
 
 export OMP_NUM_THREADS=1
-mpirun -n 96 cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
+mpirun -n 96 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
