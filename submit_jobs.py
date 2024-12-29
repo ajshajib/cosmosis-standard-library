@@ -8,14 +8,14 @@ modifiers = ["", "_lim", "_lcdm"]  # ""
 # n_cores = [8, 2, 4, 2, 8, 8, 2, 8]
 
 run_specs = [
-    # ["all", 16],
-    # ["wl", 16],
-    # ["bao_cmb", 16],
-    # ["cmb", 16],
+    ["all", 16],
+    ["wl", 16],
+    ["bao_cmb", 16],
+    ["cmb", 16],
     ["sl", 4],
-    # ["sn_bao", 2],
-    # ["sn", 2],
-    # ["bao", 2],
+    ["sn_bao", 2],
+    ["sn", 2],
+    ["bao", 2],
 ]
 
 for mod in modifiers:
