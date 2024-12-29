@@ -17,4 +17,4 @@ export JOB_NAME="${RUN_NAME}${MOD_NAME}"
 
 export OMP_NUM_THREADS=1
 
-mpirun -n ${NUM_PROC} cosmosis --mpi /scratch/midway3/ajshajib/cosmosis-standard-library/inis/${RUN_NAME}.ini
+mpirun -n ${NUM_PROC} cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/${RUN_NAME}.ini
