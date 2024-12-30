@@ -6,7 +6,7 @@
 #SBATCH --partition=caslake
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00      
-#SBATCH --ntasks=96
+#SBATCH --ntasks=24
 #SBATCH --cpus-per-task=1                                                          
 #SBATCH --mail-user=ajshajib@rcc.uchicago.edu                                   
 #SBATCH --mail-type=FAIL   
@@ -16,4 +16,4 @@ conda activate cosmosis
 source cosmosis-configure
 
 export OMP_NUM_THREADS=1
-mpirun -n 96 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
+mpirun -n 24 cosmosis --mpi /home/ajshajib/cosmosis-standard-library/forecast_inis/srd_sn.ini
