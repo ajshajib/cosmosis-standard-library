@@ -12,16 +12,16 @@ run_specs = [
     ["wl", 16],
     ["bao_cmb", 16],
     ["cmb", 16],
-    ["sl", 2],
-    ["sn_bao", 1],
-    ["sn", 1],
-    ["bao", 1],
+    # ["sl", 2],
+    # ["sn_bao", 1],
+    # ["sn", 1],
+    # ["bao", 1],
 ]
 
 for mod in modifiers:
     for run, n in run_specs:
         n_core = n * 48
-        command = f"sbatch --job-name={run}{mod} --ntasks={n_core} --export=NUM_PROC={n_core},MOD_NAME={mod},RUN_NAME={run},OUTPUT_DIR=output_pub submit.sh"
+        command = f"sbatch --job-name=a_{run}{mod} --ntasks={n_core} --export=NUM_PROC={n_core},MOD_NAME={mod},RUN_NAME={run},OUTPUT_DIR=output_amd submit_amd.sh"
         print(command)
         os.system(command)
         time.sleep(1)
