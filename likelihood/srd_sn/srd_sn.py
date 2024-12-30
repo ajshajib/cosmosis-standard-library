@@ -50,6 +50,8 @@ class SRDSNLikelihood(GaussianLikelihood):
         z = data[1]
         m_obs = data[4]
 
+        self.z_cmb = data[1]
+        self.z_hel = data[2]
         # We will need mag_obs_err later, when building the covariance,
         # so save it for now.
         self.mag_obs_err = data[5]
@@ -130,15 +132,19 @@ class SRDSNLikelihood(GaussianLikelihood):
         # Pull out theory DA and z from the block.
         theory_x = block[self.x_section, self.x_name]
         theory_y = block[self.y_section, self.y_name]
-        theory_ynew = np.zeros_like(theory_y)
+        theory_ynew = np.zeros_like(self.z_cmb)
 
         # Interpolation function of theory so we can evaluate at redshifts of the data
         f = scipy.interpolate.interp1d(theory_x, theory_y, kind=self.kind)
 
-        z = theory_x
-
         # distance modulus
-        theory_ynew = 5.0 * np.log10((1.0 + z) ** 2 * np.atleast_1d(f(z))) + 25.0
+        theory_ynew = (
+            5.0
+            * np.log10(
+                (1 + self.z_cmb) * (1 + self.z_hel) * np.atleast_1d(f(self.z_cmb))
+            )
+            + 25.0
+        )
 
         # This offset M will be marginalized in the modified log likelihood computation
         M = block[names.supernova_params, "M"]
