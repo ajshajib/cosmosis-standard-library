@@ -9,9 +9,9 @@ modifiers = ["", "_lim", "_lcdm"]  # ""
 
 run_specs = [
     ["all", 16],
-    ["wl", 16],
-    ["bao_cmb", 16],
-    ["cmb", 16],
+    # ["wl", 16],
+    # ["bao_cmb", 16],
+    # ["cmb", 16],
     # ["sl", 2],
     # ["sn_bao", 1],
     # ["sn", 1],
