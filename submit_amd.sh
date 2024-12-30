@@ -6,7 +6,7 @@
 #SBATCH --account=pi-jfrieman                                                          
 #SBATCH -t 36:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=2G                                   
+#SBATCH --mem-per-cpu=1900M                                 
 #SBATCH --mail-user=ajshajib@rcc.uchicago.edu
 #SBATCH --mail-type=FAIL 
 
