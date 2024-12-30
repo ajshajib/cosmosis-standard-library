@@ -12,10 +12,10 @@ run_specs = [
     ["wl", 16],
     ["bao_cmb", 16],
     ["cmb", 16],
-    ["sl", 4],
-    ["sn_bao", 2],
-    ["sn", 2],
-    ["bao", 2],
+    ["sl", 2],
+    ["sn_bao", 1],
+    ["sn", 1],
+    ["bao", 1],
 ]
 
 for mod in modifiers:
