@@ -18,10 +18,16 @@ import numpy as np
 # You can also downloaded and run the full data if you like, and set the data_file
 # and covmat_file parameters in the ini file.
 default_data_file = os.path.join(
-    os.path.split(__file__)[0], "lcparam_Y10_DDF_WFD_3.0xFOUNDATION_noScatter.txt"
+    os.path.split(__file__)[0],
+    "lcparam_Y10_DDF_WFD_3.0xFOUNDATION_noScatter.txt",
+    # os.path.split(__file__)[0],
+    # "lcparam_Y1_DDF_1.0xFOUNDATION_noScatter.txt",
 )
 default_covmat_file = os.path.join(
-    os.path.split(__file__)[0], "sys_Y10_DDF_WFD_FOUNDATION_2.txt"
+    os.path.split(__file__)[0],
+    "sys_Y10_DDF_WFD_FOUNDATION_2.txt",
+    # os.path.split(__file__)[0],
+    # "sys_Y1_DDF_FOUNDATION_2.txt",
 )
 
 
@@ -88,7 +94,7 @@ class SRDSNLikelihood(GaussianLikelihood):
             C[i, i] += self.mag_obs_err[i] ** 2
         f.close()
 
-        C *= 1 / 0.67  # calibrateable systematics
+        C *= 1 + 1.0**2  # calibrateable systematics
 
         # Return the covariance; the parent class knows to invert this
         # later to get the precision matrix that we need for the likelihood.
