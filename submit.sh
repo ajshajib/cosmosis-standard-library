@@ -16,5 +16,5 @@ source cosmosis-configure
 export JOB_NAME="${RUN_NAME}${MOD_NAME}"
 
 export OMP_NUM_THREADS=1
-
+export OUTPUT_DIR="output_pub"
 mpirun -n ${NUM_PROC} cosmosis --mpi /home/ajshajib/cosmosis-standard-library/inis/${RUN_NAME}.ini
