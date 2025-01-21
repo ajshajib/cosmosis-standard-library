@@ -19,7 +19,7 @@ import numpy as np
 # and covmat_file parameters in the ini file.
 default_data_file = os.path.join(
     os.path.split(__file__)[0],
-    "lcparam_Y10_DDF_WFD_3.0xFOUNDATION_noScatter.txt",
+    "lcparam_Y10_DDF_WFD_3.0xFOUNDATION_noScatter_wphiCDM.txt",
     # os.path.split(__file__)[0],
     # "lcparam_Y1_DDF_1.0xFOUNDATION_noScatter.txt",
 )
