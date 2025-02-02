@@ -74,7 +74,7 @@ class SRDSNLikelihood(GaussianLikelihood):
     def build_covariance(self):
         """Run once at the start to build the covariance matrix for the data"""
         filename = self.options.get_string("covmat_file", default=default_covmat_file)
-        print("Loading Pantheon covariance from {}".format(filename))
+        print("Loading SRD SN covariance from {}".format(filename))
         # The file format for the covariance has the first line as an integer
         # indicating the number of covariance elements, and the the subsequent
         # lines being the elements.
